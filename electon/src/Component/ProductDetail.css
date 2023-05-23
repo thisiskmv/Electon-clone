@@ -1,0 +1,172 @@
+.detail_page_main_container{
+    width: 100%;
+    
+
+}
+
+.detail_page_first_container{
+    margin: 10px;
+    /* border: 2px solid black; */
+    width: 100%;
+    display: flex;
+    
+
+
+
+}
+.detail_page_image_container{
+    /* border: 1px solid black; */
+    width: 50%;
+    height: 550px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+.detail_page_image_container>.big_img{
+    width: 95%;
+    height:70%;
+    
+}
+.detail_page_image_container>.big_img>.main_img{
+    
+width: 100%;
+height: 100%;
+border: 1px solid rgb(151, 150, 150);
+    border-radius: 10px;
+}
+
+.detail_page_image_container>.two_img{
+    display: flex;
+    width: 90%;
+    height: 30%;
+    justify-content: space-around;
+    gap: 15px;
+
+}
+.two_img .img_first{
+width: 50%;
+border: 1px solid rgb(151, 150, 150);
+border-radius: 10px;
+}
+.two_img  .img_second{
+width: 50%;
+
+border: 1px solid rgb(151, 150, 150);
+border-radius: 10px;
+}
+
+
+
+
+
+
+
+.product_detail_container{
+    width: 50%;
+    /* border: 2px solid black; */
+    height: 550px;
+    margin: 0px auto;
+    
+    }
+    .product_detail_container > div{
+        padding: 0px 20px;
+    }
+
+
+.product_title_div {
+    color: #214f6e;
+}
+.product_price_div{
+
+}
+.reviews_div {
+
+display: flex;
+
+}
+.reviews_div  > p{
+    font-size: large;
+    margin-top: -0.1px;
+    margin-left: 10px;
+    
+}
+.availability_div{
+
+}
+.availability_div span{
+    color: green;
+    font-weight: bold;
+}
+.left_products_div {
+opacity: 0.6;
+}
+.product_color_div span{
+    margin: 0px 3px  ;
+    padding-top: 10px;
+   
+
+}
+.product_size_div{
+
+}
+.product_size_div  span{
+background: rgb(238,238,238);
+padding:1px 8px;
+margin: 0px 2px;
+}
+.product_quantity_div{
+
+}
+.product_quantity_div span{
+background: rgb(238,238,238);
+padding: 0px 13px;
+border: 1px solid #6b6969;
+margin: 0px;
+}
+
+.product_quantity_div button{
+margin-left: -4px;
+padding: 6px 9px 1px 9px;
+border-radius:0px;
+border: 1px solid #404040;
+outline: none;
+}
+.button_div{
+    display: flex;
+    justify-content: space-around;
+
+}
+.button_div button{
+    
+    background: #eda515;
+    border: none;
+    padding: 3% 10%;
+    border-radius: 50px;
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    margin: 5%;
+}
+.button_div> .wishlist_btn{
+   padding: 0px 4px 0px 4px;
+    background: rgb(238,238,238);
+    border-radius: 50%;
+    
+}
+
+.sku_div span{
+opacity: 0.8;
+
+}
+.category_div span{
+font-size: 11px;
+opacity: 0.5;
+}
+.share_div span{
+margin: 10px;
+}
