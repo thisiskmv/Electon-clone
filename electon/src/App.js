@@ -1,6 +1,6 @@
 
 import ColorCheckbox from './Component/ColorCheckbox'
-// import ProductDetail from './Component/ProductDetail';
+import ProductDetail from './Component/ProductDetail';
 
 
 function App() {
