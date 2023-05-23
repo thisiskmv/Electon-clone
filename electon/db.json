@@ -3,18 +3,20 @@
       {
         "id": 1,
         "image": [
-          "https://example.com/img1.jpg",
-          "https://example.com/img2.jpg",
-          "https://example.com/img3.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/jfbfde80/camera/n/r/n/canon-eos-eos-3000d-dslr-original-imaf3t5h9yuyc5zu.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/jfbfde80/camera/n/r/n/canon-eos-3000d-original-imaf3t5hjrz6zzzc.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/jmthle80-1/dslr-camera/n/r/n/eos-eos-3000d-canon-original-imaf9n6fqhmgt4cv.jpeg?q=70"
         ],
-        "name": "Fake Gadget 1",
-        "price": 199.99,
+        "name": "Canon EOS 3000D DSLR",
+        "price": "29,990",
+        "finalPrice":"45,000",
         "review_star": 4.5,
         "available": true,
         "image_color": "black",
         "size": "Medium",
         "sku": "FG123456",
-        "category": "Electronics",
+        "category": "camera",
+        "color":["Black"],
         "customer_reviews": [
           {
             "username": "JohnDoe",
@@ -32,18 +34,20 @@
       {
         "id": 2,
         "image": [
-          "https://example.com/img4.jpg",
-          "https://example.com/img5.jpg",
-          "https://example.com/img6.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/kmccosw0/headphone/u/g/s/rockerz-450-pro-boat-original-imagf9j54dayugqg.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/kvsfhjk0/headphone/2/t/x/-original-imag8mf8qga9z6ny.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/kvsfhjk0/headphone/a/7/k/-original-imag8mf8nexzpsv8.jpeg?q=70"
         ],
-        "name": "Fake Gadget 2",
-        "price": 299.99,
+        "name": "boAt Rockerz 450 Pro",
+        "price": "1,984",
+        "finalPrice":"2,500",
         "review_star": 3.8,
         "available": true,
-        "image_color": "white",
+        "image_color": "black",
         "size": "Large",
         "sku": "FG789012",
-        "category": "Electronics",
+        "category": "headfone",
+        "color":["black"],
         "customer_reviews": [
           {
             "username": "AliceJohnson",
@@ -56,23 +60,24 @@
             "comment": "Decent product. Could be better."
           }
         ],
-        "description": "This fake gadget 2 offers advanced features and a sleek design. It is perfect for tech enthusiasts."
+        "description": "boAt Rockerz 450 Pro is a power-packed on-ear wireless headphone that has been ergonomically designed to meet the needs of music lovers. The headphones come equipped with Bluetooth V5.0 for instant wireless connectivity. Apart from the wireless connectivity, one can utilize the AUX cable as well for a wired playback experience. Though we reckon that it will rarely come into use cause of the headphone super powerful 750mAh"
       },
       {
         "id": 3,
         "image": [
-          "https://example.com/img7.jpg",
-          "https://example.com/img8.jpg",
-          "https://example.com/img9.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/kq18n0w0/code-in-the-box-game/4/m/l/pc-4k-ultra-hd-gaming-controller-with-game-stick-tv-video-game-original-imag453as3haqcsy.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/kq18n0w0/code-in-the-box-game/4/4/0/pc-4k-ultra-hd-gaming-controller-with-game-stick-tv-video-game-original-imag453anhwm9nav.jpeg?q=70"
         ],
-        "name": "Fake Gadget 3",
-        "price": 149.99,
+        "name": "Latest Video Game - 4K ULTRA ",
+        "price": "₹2,260",
+        "finalPrice":"4,500",
         "review_star": 4.0,
         "available": true,
-        "image_color": "silver",
+        "image_color": "black",
         "size": "Small",
         "sku": "FG345678",
-        "category": "Electronics",
+        "category": "laptop",
+        "color":["black"],
         "customer_reviews": [
           {
             "username": "SarahLee",
@@ -90,18 +95,20 @@
       {
         "id": 4,
         "image": [
-          "https://example.com/img10.jpg",
-          "https://example.com/img11.jpg",
-          "https://example.com/img12.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/j/m/2/-original-imagpa5gadtkbm6y.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/j/f/u/-original-imagg56h7fyxpghj.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/computer/u/a/2/-original-imagg56hq9jnr4bn.jpeg?q=70"
         ],
-        "name": "Fake Gadget 4",
-        "price": 399.99,
+        "name": "Lenovo IdeaPad 3 Intel Core i5",
+        "price": "₹55,990",
+        "finalPrice":"70,000",
         "review_star": 4.2,
         "available": true,
-        "image_color": "blue",
+        "image_color": "grey",
         "size": "Large",
         "sku": "FG901234",
-        "category": "Electronics",
+        "category": "laptop",
+        "color":["grey"],
         "customer_reviews": [
           {
             "username": "EmilyWilson",
@@ -114,23 +121,25 @@
             "comment": "Good product, but a bit expensive."
           }
         ],
-        "description": "The Fake Gadget 4 offers top-of-the-line features and exceptional performance. It is perfect for tech-savvy individuals seeking a premium gadget experience."
+        "description": "You can get your work done in no time with the Lenovo IdeaPad Slim 3 Laptop. With its lightweight body sporting up to 19.9 mm of thinness, this laptop enables you to effortlessly carry it anywhere. Offering up to four-sided narrow bezels and a screen-to-body ratio of up to 88%, this laptop renders impactful visuals. In addition, it has a long battery life of up to 8 hours, so you can use it for long durations."
       },
       {
         "id": 5,
         "image": [
-          "https://example.com/img13.jpg",
-          "https://example.com/img14.jpg",
-          "https://example.com/img15.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/kw9krrk0/mouse/v/p/h/toad-13-portronics-original-imag8zbqqkgmb9d6.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/kw9krrk0/mouse/r/m/t/toad-13-portronics-original-imag8zbqhk5y54zz.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/kw9krrk0/mouse/y/9/v/toad-13-portronics-original-imag8zbqczkz9kmc.jpeg?q=70"
         ],
-        "name": "Fake Gadget 5",
-        "price": 249.99,
+        "name": "Portronics Toad 13, POR 1382",
+        "price": "₹324",
+        "finalPrice":"499",
         "review_star": 4.0,
         "available": true,
-        "image_color": "red",
+        "image_color": "white",
         "size": "Medium",
         "sku": "FG567890",
-        "category": "Electronics",
+        "category": "mouse",
+        "color":["white"],
         "customer_reviews": [
           {
             "username": "OliviaSmith",
@@ -143,23 +152,25 @@
             "comment": "Satisfied with the product, but the price is a bit high."
           }
         ],
-        "description": "The Fake Gadget 5 combines style and functionality. It is designed to enhance your daily tasks and provide a seamless experience."
+        "description": "With a great combination of optical technology and easy navigation, Toad 13 Wireless Optical Mouse is a smart pick. Enjoy wireless freedom with its true wireless design. Its compact and pocket-friendly allows you to carry this ergonomically designed mouse anywhere with ease. Experience Seamless user experience with Toad 13s 2.4 GHz operating speed and 1000 DPI."
       },
       {
         "id": 6,
         "image": [
-          "https://example.com/img16.jpg",
-          "https://example.com/img17.jpg",
-          "https://example.com/img18.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/speaker/home-theatre/6/w/l/opera-impex-original-imaghyzfhmph32cm.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/speaker/home-theatre/9/q/x/opera-impex-original-imaghyzf7nxxxwyg.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/speaker/home-theatre/m/7/o/opera-impex-original-imaghyzff8hcjsbz.jpeg?q=70"
         ],
         "name": "Fake Gadget 6",
-        "price": 179.99,
+        "price":" ₹4,690",
+        "finalPrice":"7,950",
         "review_star": 3.5,
         "available": true,
-        "image_color": "green",
+        "image_color": "black",
         "size": "Small",
         "sku": "FG123789",
-        "category": "Electronics",
+        "category": "speaker",
+        "color":["black"],
         "customer_reviews": [
           {
             "username": "SophiaDavis",
@@ -172,23 +183,25 @@
             "comment": "Good value for the price."
           }
         ],
-        "description": "The Fake Gadget 6 is a compact and affordable device that meets your everyday needs. It offers a balance of features and usability."
+        "description": " ECelebrate rich sound quality in your home with Impex 5.1OPERA.The features consist of control panel, LED display, subwoofer and remote controller for your convenient use. It also supports FM radio, which helps to listen to the music and broadcast of your choice. It also supports Bluetooth, which provide wireless music streaming"
       },
       {
         "id": 7,
         "image": [
-          "https://example.com/img19.jpg",
-          "https://example.com/img20.jpg",
-          "https://example.com/img21.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/ksxjs7k0/tablet/n/j/b/rmp2102-realme-original-imag6e3assqyqhfa.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/ksxjs7k0/tablet/b/3/y/rmp2102-realme-original-imag6e3ay76sxgg4.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/ksxjs7k0/tablet/s/k/9/rmp2102-realme-original-imag6e3a7p3hmt2w.jpeg?q=70"
         ],
-        "name": "Fake Gadget 7",
-        "price": 299.99,
+        "name": "realme Pad 3 GB RAM 32 GB",
+        "price": "₹15,437",
+        "finalPrice":"24,999",
         "review_star": 4.8,
         "available": true,
-        "image_color": "black",
+        "image_color": "grey",
         "size": "Large",
         "sku": "FG234567",
-        "category": "Electronics",
+        "category": "tablet",
+        "color":["grey"],
         "customer_reviews": [
           {
             "username": "EmmaWilson",
@@ -201,23 +214,25 @@
             "comment": "Fantastic product with great features."
           }
         ],
-        "description": "The Fake Gadget 7 is a high-end device that offers exceptional performance and a sleek design. It is perfect for tech enthusiasts seeking top-tier gadgets."
+        "description": "Binge-watch your favourite TV shows and browse the internet for hours with the realme Pad 3 tablet. This tablet comes with a 7100 mAh battery and 18 W Quick charge feature so that you can remain engrossed in the device throughout the day."
       },
       {
         "id": 8,
         "image": [
-          "https://example.com/img22.jpg",
-          "https://example.com/img23.jpg",
-          "https://example.com/img24.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/headphone/a/u/c/-original-imagpmdh2ggpumah.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/headphone/j/v/a/-original-imagpmdhzes8ebj9.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/headphone/3/w/n/-original-imagpmdhnzhcdqzd.jpeg?q=70"
         ],
-        "name": "Fake Gadget 8",
-        "price": 179.99,
+        "name": "truke BTG Storm Gaming Earbuds ",
+        "price": "₹899",
+        "finalPrice":"2,499",
         "review_star": 3.2,
         "available": true,
-        "image_color": "silver",
+        "image_color": "black",
         "size": "Medium",
         "sku": "FG678901",
-        "category": "Electronics",
+        "category": "headfone",
+        "color":["black"],
         "customer_reviews": [
           {
             "username": "AvaAnderson",
@@ -230,23 +245,25 @@
             "comment": "Decent gadget, but could be better."
           }
         ],
-        "description": "The Fake Gadget 8 offers essential features and reliable performance at an affordable price. It is suitable for everyday use."
+        "description": "Unleash the power of gaming with the truke BTG Storm Gaming Earbuds. These cutting-edge earbuds are designed to deliver an immersive gaming experience like no other. Featuring a striking RGB Gaming Characterized Case Design,"
       },
       {
         "id": 9,
         "image": [
-          "https://example.com/img25.jpg",
-          "https://example.com/img26.jpg",
-          "https://example.com/img27.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/juwzf680/sports-action-camera/r/4/z/30m-depth-16-mp-ultra-hd-under-water-plain-1080-hd-cam-042-30m-original-imaffxdhbyszxg8h.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/juzuavk0/sports-action-camera/e/d/f/170-degree-wide-angle-waterproof-plain-1080-hd-cam-038-170-original-imaffxbfaxgwvjgc.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/juyev0w0/sports-action-camera/e/d/f/170-degree-wide-angle-waterproof-plain-1080-hd-cam-038-170-original-imaffx6sngdjkade.jpeg?q=70"
         ],
-        "name": "Fake Gadget 9",
-        "price": 599.99,
+        "name": "RHONNIUM Plain 1080-HD Cam-042",
+        "price": "₹1,166",
+        "finalPrice":"2500",
         "review_star": 4.9,
         "available": true,
         "image_color": "white",
         "size": "Large",
         "sku": "FG345678",
-        "category": "Electronics",
+        "category": "camera",
+        "color":["white"],
         "customer_reviews": [
           {
             "username": "IsabellaDavis",
@@ -259,23 +276,25 @@
             "comment": "Exceptional performance and sleek design. Highly recommended."
           }
         ],
-        "description": "The Fake Gadget 9 sets a new standard for high-end devices. It offers cutting-edge features and unparalleled performance for tech enthusiasts."
+        "description": "FHD 1080P 12MP action camera is a must have to capture your every important moment. It has a variety of industry-leading features including digital video recording, photo shooting, which makes it perfect for outdoor sports. Specifications: * Screen Size: 2.0 inch LCD Screen * Lens: 140°wide-angle lens * Resolution: 1080P FHD, 720P FHD, VGA, QVGA"
       },
       {
         "id": 10,
         "image": [
-          "https://example.com/img28.jpg",
-          "https://example.com/img29.jpg",
-          "https://example.com/img30.jpg"
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/smartwatch/o/a/a/-original-imaghxh9rgrc9ebm.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/smartwatch/f/h/y/-original-imaghxh9qhtrbewd.jpeg?q=70",
+          "https://rukminim1.flixcart.com/image/416/416/xif0q/smartwatch/v/s/e/-original-imaghxg8zhdx4fha.jpeg?q=70"
         ],
-        "name": "Fake Gadget 10",
-        "price": 279.99,
+        "name": "APPLE Watch Ultra GPS + Cellular - ECG App",
+        "price": "₹74,999",
+        "finalPrice":"89,900",
         "review_star": 4.2,
         "available": true,
-        "image_color": "black",
+        "image_color": "orange",
         "size": "Medium",
         "sku": "FG901234",
-        "category": "Electronics",
+        "category": "watch",
+        "color":["orange"],
         "customer_reviews": [
           {
             "username": "SophiaWilson",
@@ -288,7 +307,7 @@
             "comment": "Good product, but a bit expensive."
           }
         ],
-        "description": "The Fake Gadget 10 offers a perfect balance of features and affordability. It is suitable for everyday use and delivers reliable performance."
+        "description": "The most rugged and capable Apple Watch ever, designed for exploration, adventure and endurance. With a 49-millimetre aerospace-grade titanium case, extra-long battery life, specialised apps that work with the advanced sensors and a new customisable Action button."
       },
       {
         "id": 11,
