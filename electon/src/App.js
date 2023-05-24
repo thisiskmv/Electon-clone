@@ -1,14 +1,16 @@
+import AllRoutes from "./Routes/AllRoutes";
 
-import ColorCheckbox from './Component/ColorCheckbox'
-// import ProductDetail from './Component/ProductDetail';
+
+
 
 
 function App() {
   return (
     <div className="App">
-     {/* <ProductDetail/> */}
 
-     <ColorCheckbox/>
+    <AllRoutes />
+
+     
      
     </div>
   );
