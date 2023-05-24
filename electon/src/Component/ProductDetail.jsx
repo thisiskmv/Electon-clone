@@ -80,7 +80,7 @@ export default function ProductDetail({ product }) {
       quantity: state.selectedQuantity,
       price: product.price * state.selectedQuantity,
       ...product,
-    };
+    }
 
     axios
       .post('https://electon-server.onrender.com/chartArr', payload)
