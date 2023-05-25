@@ -6,3 +6,16 @@ export const productActionCreator=(data)=>{
         payload:data
     }
 }
+
+export const loadingActionCreator=()=>{
+    return{
+        type:types.LOADING
+    }
+}
+
+export const errorActionCreator=()=>{
+    return{
+        type:types.ERROR
+    }
+}
+
