@@ -82,8 +82,6 @@ export default function ProductDetail({ product }) {
     dispatch({ type: 'SET_SELECTED_IMAGE', payload: imageUrl });
   };
 
-
-
   const [state, dispatch] = useReducer(productReducer, initialStates);
 
 
