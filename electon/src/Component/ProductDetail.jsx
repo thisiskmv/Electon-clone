@@ -20,6 +20,7 @@ export default function ProductDetail({ product }) {
   const [isWriteReviewVisible, setWriteReviewVisible] = useState(false);
   const [username, setUsername] = useState('');
   const [comment, setComment] = useState('');
+  const  [customerRating, setCustomerRating] = useState('');
   const [customerReviews, setCustomerReviews] = useState(product.customer_reviews);
   const [products, setProduct] = useState({});
 
@@ -44,32 +45,38 @@ export default function ProductDetail({ product }) {
   const handleReviewSubmit = () => {
     const newReview = {
       username: username,
-      rating: 4,
+      rating: customerRating,
       comment: comment,
     };
-
-    // Create a new array with updated reviews
-    const updatedReviews = [...customerReviews, newReview];
-
+  
+    // Create a new object with updated customer_reviews array
+    const updatedProduct = {
+      ...product,
+      customer_reviews: [...product.customer_reviews, newReview]
+    };
+  
     axios
-      .put(`https://electon-server.onrender.com/Products/${product.id}`, { customer_reviews: updatedReviews })
+      .put(`https://electon-server.onrender.com/Products/${product.id}`, updatedProduct)
       .then((response) => {
         console.log(response);
         // Handle success response if needed
         console.log(response.data);
-        // Update the state with the updated reviews
-        setCustomerReviews(updatedReviews);
-        handleReviewsButtonClick(true)
+        
+        setCustomerReviews(updatedProduct.customer_reviews)
+        handleReviewsButtonClick()
       })
       .catch((error) => {
         // Handle error if needed
         console.error(error);
       });
-
+  
     // Reset form values
     setUsername('');
     setComment('');
+    setCustomerRating(' ');
   };
+  
+  
 
   const handleImageClick = (imageUrl) => {
     dispatch({ type: 'SET_SELECTED_IMAGE', payload: imageUrl });
@@ -168,7 +175,7 @@ export default function ProductDetail({ product }) {
       });
   };
   const handleDecrementQuantity = () => {
-    if (state.selectedQuantity > 0) {
+    if (state.selectedQuantity > 1) {
       dispatch({ type: 'DECREMENT_QUANTITY' });
     }
   };
@@ -228,11 +235,11 @@ export default function ProductDetail({ product }) {
             </Box>
             <Box className="reviews_div">
               <span>
-                {product.review_star >= 1 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                {product.review_star >= 2 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                {product.review_star >= 3 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                {product.review_star >= 4 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                {product.review_star >= 5 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+                {product.review_star >= 1 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+                {product.review_star >= 2 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+                {product.review_star >= 3 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+                {product.review_star >= 4 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+                {product.review_star >= 5 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
               </span>
               <Text>{product.review_star >= 1 ? " " : "No reviews"}</Text>
             </Box>
@@ -343,16 +350,20 @@ export default function ProductDetail({ product }) {
                 <Text as="h3">Customer reviews</Text >
                 <div className="review_show_div">
                   {customerReviews.map((review, index) => (
+                    
                     <div key={index}>
                       {/* <h3>{review.username}</h3> */}
-                      <Box className='reviews_div'>
+                      <Box className='rating_div'>
                       <h4>{review.username}: </h4>
                       
-                        {review.rating >= 1 ? <AiFillStar size={'2px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                        {review.rating >= 2 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                        {review.rating >= 3 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                        {review.rating >= 4 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                        {review.rating >= 5 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                      <span>
+                              {review.rating >= 1 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                              {review.rating >= 2 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                              {review.rating >= 3 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                              {review.rating >= 4 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                              {review.rating >= 5 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                            </span>
+                           
                      
                       
                       </Box>
@@ -367,7 +378,10 @@ export default function ProductDetail({ product }) {
                 {isWriteReviewVisible && (
                   <Box className='write_review_div'>
                     <Input type="text" placeholder='User Name..' value={username} onChange={(e) => setUsername(e.target.value)} />
-                    <Textarea placeholder='Write your reviews...' lineHeight={1} value={comment} onChange={(e) => setComment(e.target.value)} />
+                    
+                    <Input placeholder='Rating...' type='number' onChange={(e) => setCustomerRating(e.target.value > 5 ? alert("Please rate this product out of 5 "):e.target.value  )}></Input>
+                    <Textarea typeof='text' placeholder='Write your reviews...' lineHeight={1} value={comment} onChange={(e) => setComment(e.target.value)} />
+                    
                     <Button className='submit_review_btn' onClick={handleReviewSubmit}>Submit</Button>
                   </Box>
                 )}

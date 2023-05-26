@@ -78,6 +78,11 @@ margin-top: -20px;
     margin-top: -0.1px;
     margin-left: 10px;
   }
+  .rating_div{
+    display: flex;
+    /* align-items: center; */
+    gap: 7px;
+  }
   
   .availability_div  {
 display: flex;
@@ -129,12 +134,13 @@ gap: 5px;
   }
   .product_size_div button {
    
-    padding: 1px 9px;
-    margin: 0px 3px;
-    font-size: 12.5px;
+    padding: 4px 13px;
+    margin: 0px 5px;
+    font-size: 13px;
     border-radius: 0px;
-    border: 0.1px solid black;
+   
     cursor: pointer;
+    border: none;
   }
   .product_size_div button:hover{
 color: white;
@@ -154,7 +160,7 @@ color: white;
     padding: 1px 12px ; 
     margin-right: -1px;
     border-radius: 0px;
-    border: 1px solid #404040;
+    border: 1px solid rgb(151, 150, 150);
     outline: none;
     text-align: center;
     font-size: 18px;
@@ -165,16 +171,16 @@ color: white;
     margin-left: -5px;
     padding: 1px 12px ;
     border-radius: 0px;
-    border: 1px solid #404040;
+    border: 1px solid rgb(151, 150, 150);
     outline: none;
     text-align: center;
     font-size: 18px;
   }
   .product_quantity_div .value_btn{
     margin-bottom:5px;
-    padding: 1px 20px ;
+    padding: 1px 20px  ;
     border-radius: 0px;
-    border: 1px solid #404040;
+    border: 1px solid rgb(151, 150, 150);
     outline: none;
     text-align: center;
     font-size: 18px;
@@ -300,6 +306,9 @@ background-color: #fff;
     width: 30%;
     gap: 20px;
   }
+  .detail_page_third_container{
+    width: 99%;
+  }
   .write_review_div button{
     cursor: pointer;  }
   .review_show_div h4{
@@ -308,8 +317,26 @@ margin: 2px 0px;
 
 
 
-  .detail_page_third_container{
-    width: 100%;
+ 
+  .write_review_div input{
+    border: 1px solid rgb(151, 150, 150);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    
+  }
+  .write_review_div textarea{
+    border: 1px solid rgb(151, 150, 150);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 10px;
+    height: 30px;
+  }
+
+  
+
+  .con_review_div h3{
+    color: #214f6e;
   }
   /* Responsive styles */
   
@@ -412,6 +439,23 @@ margin: 2px 0px;
       
       border-radius: 50%;
     }
-    
+    .write_review_div button{
+      cursor: pointer;  
+      width:80px;
+    }
+   
+  
+  
+  
+   
+    .write_review_div input{
+     width:150px;
+      
+    }
+    .write_review_div textarea{
+      
+      width:150px;
+      
+    }
   }
   
