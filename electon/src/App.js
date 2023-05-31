@@ -1,21 +1,15 @@
 
-import ColorCheckbox from './Component/ColorCheckbox'
-import ProductDetail from './Component/ProductDetail';
-import Product from './Component/pages/Product';
-
+import AllRoutes from "./Routes/AllRoutes";
 function App() {
   return (
     <div className="App">
-     {/* <ProductDetail/> */}
 
-     {/* <ColorCheckbox/> */}
-     <Product/>
+    <AllRoutes />
+
+     
      
     </div>
   );
 }
-
-
-
 
 export default App;
