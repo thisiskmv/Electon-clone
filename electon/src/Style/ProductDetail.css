@@ -23,11 +23,13 @@
   .detail_page_image_container > .big_img {
     width: 95%;
     height: 70%;
+ 
   }
   
   .detail_page_image_container > .big_img > .main_img {
     width: 100%;
     height: 100%;
+   
     border: 1px solid rgb(151, 150, 150);
     border-radius: 10px;
   }
@@ -199,7 +201,7 @@ color: white;
     border: none;
     padding: 3% 10%;
     border-radius: 50px;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: white;
     margin: 5%;
@@ -338,6 +340,24 @@ margin: 2px 0px;
   .con_review_div h3{
     color: #214f6e;
   }
+.detail_page_third_container{
+  width: 99%;
+}
+.detail_page_third_container >div{
+  width: 99%;
+  /* border:1px solid red; */
+  margin-left:6px
+}
+
+  .wishlist_main_container{
+    /* border:1px solid red; */
+display: flex;
+margin-left: 3%;
+flex-wrap: wrap;
+gap: 20px;
+margin-bottom: 20px;
+
+  }
   /* Responsive styles */
   
  /* Responsive styles */
@@ -375,7 +395,7 @@ margin: 2px 0px;
       height: auto;
     }
     .button_div >button {
-      padding: 3% 12%;
+      padding: 3% 10%;
       font-size: 20px;
 
       
@@ -401,6 +421,11 @@ margin: 2px 0px;
     .two_img .img_second {
       width: 48%;
       margin-bottom: 10px;
+    }
+    .button_div >button {
+      padding: 2% 6%;
+      font-size: 19px;
+      
     }
   
     .rev_btn_div{
@@ -456,6 +481,9 @@ margin: 2px 0px;
       
       width:150px;
       
+    }
+    .detail_page_third_container{
+      display: none ;
     }
   }
   

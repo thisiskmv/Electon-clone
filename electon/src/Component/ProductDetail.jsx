@@ -2,12 +2,12 @@ import React, { useEffect, useReducer, useState } from 'react';
 import { AiFillHeart, AiFillStar, AiOutlineStar, AiOutlineCheck, AiTwotoneCheckCircle, AiOutlineHeart, AiFillGoogleCircle } from 'react-icons/ai';
 import { BsFacebook } from 'react-icons/bs';
 import { RiWhatsappFill } from 'react-icons/ri';
-import {
-  Text, Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription, Box, Button, Image, Input, Textarea, Flex, Spacer
-} from '@chakra-ui/react';
+// import {
+//   p, Alert,
+//   AlertIcon,
+//   AlertTitle,
+//   AlertDescription, div, button, img, input, Textarea, div, Spacer
+// } from '@chakra-ui/react';
 import axios from 'axios';
 import { initialStates, productReducer } from '../Redux/reducer';
 import '../Style/ProductDetail.css';
@@ -20,7 +20,7 @@ export default function ProductDetail({ product }) {
   const [isWriteReviewVisible, setWriteReviewVisible] = useState(false);
   const [username, setUsername] = useState('');
   const [comment, setComment] = useState('');
-  const  [customerRating, setCustomerRating] = useState('');
+  const [customerRating, setCustomerRating] = useState('');
   const [customerReviews, setCustomerReviews] = useState(product.customer_reviews);
   const [products, setProduct] = useState({});
 
@@ -48,20 +48,20 @@ export default function ProductDetail({ product }) {
       rating: customerRating,
       comment: comment,
     };
-  
+
     // Create a new object with updated customer_reviews array
     const updatedProduct = {
       ...product,
       customer_reviews: [...product.customer_reviews, newReview]
     };
-  
+
     axios
       .put(`https://electon-server.onrender.com/Products/${product.id}`, updatedProduct)
       .then((response) => {
         console.log(response);
         // Handle success response if needed
         console.log(response.data);
-        
+
         setCustomerReviews(updatedProduct.customer_reviews)
         handleReviewsButtonClick()
       })
@@ -69,14 +69,14 @@ export default function ProductDetail({ product }) {
         // Handle error if needed
         console.error(error);
       });
-  
+
     // Reset form values
     setUsername('');
     setComment('');
     setCustomerRating(' ');
   };
-  
-  
+
+
 
   const handleImageClick = (imageUrl) => {
     dispatch({ type: 'SET_SELECTED_IMAGE', payload: imageUrl });
@@ -202,257 +202,244 @@ export default function ProductDetail({ product }) {
 
   return (
 
-    <Box className="detail_page_main_container">
-      <Box className="detail_page_navbar">
+    <div className="detail_page_main_container">
+      <div className="detail_page_navbar">
 
-      </Box>
-      <Box className="detail_page_first_container">
-        <Box className="detail_page_image_container">
-          <Box className="big_img">
-            <Image className="main_img" src={state.selectedImage || product.image[0]} />
-          </Box>
-          <Box className="two_img">
+      </div>
+      <div className="detail_page_first_container">
+        <div className="detail_page_image_container">
+          <div className="big_img">
+            <img className="main_img" src={state.selectedImage || product.image[0]} />
+          </div>
+          <div className="two_img">
             {product.image.map((imageUrl, index) => (
-              <Image
+              <img
                 className="img_first"
                 src={imageUrl}
                 onClick={() => handleImageClick(imageUrl)}
                 key={index}
-                alt={`Image ${index + 1}`}
+                alt={`img ${index + 1}`}
               />
             ))}
-          </Box>
-        </Box>
-        <Box className="product_detail_container">
-          <Box>
-            <Box className="product_title_div">
-              <Text as="h1">{product.name}</Text >
-            </Box>
-            <Box className="product_price_div">
-              <Text as="h1">${product.price}</Text >
-            </Box>
-            <Box className="reviews_div">
-              <span>
-                {product.review_star >= 1 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
-                {product.review_star >= 2 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
-                {product.review_star >= 3 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
-                {product.review_star >= 4 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
-                {product.review_star >= 5 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
-              </span>
-              <Text>{product.review_star >= 1 ? " " : "No reviews"}</Text>
-            </Box>
-            <Box className="availability_div">
-              <Text as="h3">
-                Availability: </Text ><AiOutlineCheck color="green" size={'20px'} /> <Text as="h3" className='in_stock'>In stock</Text >
+          </div>
+        </div>
+        <div className="product_detail_container">
+          <div>
+            <div className="product_title_div">
+              <h1>{product.name}</h1 >
+            </div>
+            <div className="product_price_div">
+              <h1>${product.price}</h1 >
+            </div>
+            <div className="reviews_div">
 
-            </Box>
-            <Box className="left_products_div">
-              <Text as="h4">Hurry up! only {product.id * 5} product left in stock!</Text >
-            </Box>
+              {product.review_star >= 1 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+              {product.review_star >= 2 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+              {product.review_star >= 3 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+              {product.review_star >= 4 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+              {product.review_star >= 5 ? <AiFillStar size={'30px'} color="#eda515" /> : <AiOutlineStar size={'30px'} color="#eda515" />}
+
+              <p>{product.review_star >= 1 ? " " : "No reviews"}</p>
+            </div>
+            <div className="availability_div">
+              <h3>
+                Availability: </h3 ><AiOutlineCheck color="green" size={'20px'} /> <h3 className='in_stock'>In stock</h3 >
+
+            </div>
+            <div className="left_products_div">
+              <h4>Hurry up! only {product.id * 5} product left in stock!</h4 >
+            </div>
             <hr />
-            <Box className="product_color_div">
-              <Text as="h3">Color:</Text>
+            <div className="product_color_div">
+              <h3>Color:</h3>
               {product.color.map((color, index) => (
-                <Button
+                <button
                   key={index}
                   style={{ background: color }}
                   className={selectedColor === color ? 'selected' : ''}
                   onClick={() => handleColorClick(color)}
-                ></Button>
+                ></button>
               ))}
-            </Box>
+            </div>
 
-            <Box className="product_size_div">
-  <Text as="h3">
-    Size:
-    {product.size && product.size.length > 0 ? (
-      product.size.map((size, index) => (
-        <Button
-          onClick={() => handleSizeClick(size)}
-          key={index}
-          className={selectedSize === size ? 'selected' : ''}
-        >
-          {size}
-        </Button>
-      ))
-    ) : (
-      <span>No sizes available</span>
-    )}
-  </Text>
-</Box>
-            <Box className="product_quantity_div">
-              <Text as="h3">
+            <div className="product_size_div">
+              <h3>
+                Size:
+                {product.size && product.size.length > 0 ? (
+                  product.size.map((size, index) => (
+                    <button
+                      onClick={() => handleSizeClick(size)}
+                      key={index}
+                      className={selectedSize === size ? 'selected' : ''}
+                    >
+                      {size}
+                    </button>
+                  ))
+                ) : (
+                  <span>No sizes available</span>
+                )}
+              </h3>
+            </div>
+            <div className="product_quantity_div">
+              <h3>
                 Quantity:
                 <span className='quantity_span'>
-                  <Button className='red_btn' onClick={handleDecrementQuantity}>-</Button>
-                  <Button className='value_btn'>{state.selectedQuantity}</Button>
-                  <Button className='inc_btn' onClick={handleIncrementQuantity}>+</Button>
+                  <button className='red_btn' onClick={handleDecrementQuantity}>-</button>
+                  <button className='value_btn'>{state.selectedQuantity}</button>
+                  <button className='inc_btn' onClick={handleIncrementQuantity}>+</button>
                 </span>
-              </Text >
-            </Box>
-            <Box className="button_div">
-              <Button onClick={handleAddToCart}>Add to cart</Button>
-              <Button onClick={handleAddToCart}>Buy it now</Button>
+              </h3 >
+            </div>
+            <div className="button_div">
+              <button onClick={handleAddToCart}>Add to cart</button>
+              <button onClick={handleAddToCart}>Buy it now</button>
               {isInWishlist ? (
-                <Button className='wishlist_btn_del' onClick={handleRemoveWishlist}>
+                <button className='wishlist_btn_del' onClick={handleRemoveWishlist}>
                   <AiFillHeart size={'30px'} color="#eda515" />
-                </Button>
+                </button>
               ) : (
-                <Button className='wishlist_btn_add' onClick={handleAddWishlist}>
+                <button className='wishlist_btn_add' onClick={handleAddWishlist}>
                   <AiOutlineHeart size={'30px'} color="black" />
-                </Button>
+                </button>
               )}
 
-            </Box>
+            </div>
             <hr />
-            <Box className="sku_div">
-              <Text as="h3">
+            <div className="sku_div">
+              <h3>
                 Sku: <span>01133-9-9</span>
-              </Text >
-            </Box>
-            <Box className="category_div">
-              <Text as="h3">
+              </h3 >
+            </div>
+            <div className="category_div">
+              <h3>
                 Category: <span>20% off, 49% off {product.category}</span>
-              </Text >
-            </Box>
-            <Box className="share_div">
-              <Text as="h3">
-                Share: </Text >
-              <Button >
+              </h3 >
+            </div>
+            <div className="share_div">
+              <h3>
+                Share: </h3 >
+              <button >
                 <AiFillGoogleCircle size={'25px'} />
-              </Button>
-              <Button>
+              </button>
+              <button>
                 <BsFacebook size={'22px'} />
-              </Button>
-              <Button>
+              </button>
+              <button>
                 <RiWhatsappFill size={'25px'} />
-              </Button>
+              </button>
 
-            </Box>
-          </Box>
-        </Box>
-        <Box className="detail_page_second_container">
-          <Box className='rev_btn_div'>
-            <Button className='desc_btn' onClick={handleDescButtonClick}>Description</Button>
-            <Button className='reviews_btn' onClick={handleReviewsButtonClick}>Reviews</Button>
-          </Box>
-          <Box className='D_R_WR_div'>
+            </div>
+          </div>
+        </div>
+        <div className="detail_page_second_container">
+          <div className='rev_btn_div'>
+            <button className='desc_btn' onClick={handleDescButtonClick}>Description</button>
+            <button className='reviews_btn' onClick={handleReviewsButtonClick}>Reviews</button>
+          </div>
+          <div className='D_R_WR_div'>
             {isDescriptionVisible && (
-              <Box className='description_show_div'>
-                <Text as="h3">Product Description:</Text >
-                <Text>{product.description}</Text>
-              </Box>
+              <div className='description_show_div'>
+                <h3>Product Description:</h3 >
+                <p>{product.description}</p>
+              </div>
             )}
             {isReviewsVisible && (
-              <Box className='con_review_div'>
-                <Text as="h3">Customer reviews</Text >
+              <div className='con_review_div'>
+                <h3>Customer reviews</h3 >
                 <div className="review_show_div">
                   {customerReviews.map((review, index) => (
-                    
+
                     <div key={index}>
                       {/* <h3>{review.username}</h3> */}
-                      <Box className='rating_div'>
-                      <h4>{review.username}: </h4>
-                      
-                      <span>
-                              {review.rating >= 1 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                              {review.rating >= 2 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                              {review.rating >= 3 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                              {review.rating >= 4 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                              {review.rating >= 5 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
-                            </span>
-                           
-                     
-                      
-                      </Box>
+                      <div className='rating_div'>
+                        <h4>{review.username}: </h4>
+
+
+                        {review.rating >= 1 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                        {review.rating >= 2 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                        {review.rating >= 3 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                        {review.rating >= 4 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+                        {review.rating >= 5 ? <AiFillStar size={'20px'} color="#eda515" /> : <AiOutlineStar size={'20px'} color="#eda515" />}
+
+
+
+
+                      </div>
                       <p>{review.comment}</p>
                     </div>
                   ))}
                 </div>
 
                 {!isWriteReviewVisible && (
-                  <Button className='write_review_btn' onClick={handleWriteReviewButtonClick}>Write a review</Button>
+                  <button className='write_review_btn' onClick={handleWriteReviewButtonClick}>Write a review</button>
                 )}
                 {isWriteReviewVisible && (
-                  <Box className='write_review_div'>
-                    <Input type="text" placeholder='User Name..' value={username} onChange={(e) => setUsername(e.target.value)} />
-                    
-                    <Input placeholder='Rating...' type='number' onChange={(e) => setCustomerRating(e.target.value > 5 ? alert("Please rate this product out of 5 "):e.target.value  )}></Input>
-                    <Textarea typeof='text' placeholder='Write your reviews...' lineHeight={1} value={comment} onChange={(e) => setComment(e.target.value)} />
-                    
-                    <Button className='submit_review_btn' onClick={handleReviewSubmit}>Submit</Button>
-                  </Box>
+                  <div className='write_review_div'>
+                    <input type="text" placeholder='User Name..' value={username} onChange={(e) => setUsername(e.target.value)} />
+
+                    <input placeholder='Rating...' type='number' onChange={(e) => setCustomerRating(e.target.value > 5 ? alert("Please rate this product out of 5 ") : e.target.value)}></input>
+                    <textarea typeof='text' placeholder='Write your reviews...' lineHeight={1} value={comment} onChange={(e) => setComment(e.target.value)} />
+
+                    <button className='submit_review_btn' onClick={handleReviewSubmit}>Submit</button>
+                  </div>
                 )}
-              </Box>
+              </div>
             )}
-          </Box>
-        </Box>
+          </div>
+        </div>
 
 
 
-        <Box className="detail_page_third_container">
-          <Box m="0.5rem" w="100%" h="90vh">
+        <div className="detail_page_third_container">
+          <div >
             <h2>Wishlist Product</h2>
-            <div>
+            <div >
 
               {wishproducts.length > 0 && (
-                <div
-                  style={{
-                    display: "flex",
-
-                    textAlign: "left",
-
-                    overflow: "hidden"
-                  }}
-                >
+                <div  className='wishlist_main_container' >
                   {wishproducts.map((elm) => {
                     return (
-                      <Box
-                        key={elm.id}
-
-                        border="1px solid rgb(216,216,216)"
-                        borderRadius={"1.5rem"}
-                        p="1rem"
-                        m="0.5rem"
+                      <div
+                       
                       >
 
-                        <Flex justify={"center"}>
-                          <Image
+                        <div >
+                          <img
                             src={elm.image[0]}
                             width="200px"
                             height={"180px"}
-                            alt=""
+
                           />
-                        </Flex>
-                        <Spacer />
-                        <Box mt="1rem" lineHeight={"2rem"}>
+                        </div>
+                        {/* <Spacer /> */}
+                        <div >
                           <h3>{elm.name.slice(0, 26)}</h3>
                           <h3>{elm.price}</h3>
-                          <Box className="reviews_div">
-                            <span>
-                              {product.review_star >= 1 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                              {product.review_star >= 2 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                              {product.review_star >= 3 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                              {product.review_star >= 4 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                              {product.review_star >= 5 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
-                            </span>
-                            <Text>{product.review_star >= 1 ? " " : "No reviews"}</Text>
-                          </Box>
-                        </Box>
+                          <div className="reviews_div">
+
+                            {product.review_star >= 1 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+                            {product.review_star >= 2 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+                            {product.review_star >= 3 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+                            {product.review_star >= 4 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+                            {product.review_star >= 5 ? <AiFillStar size={'25px'} color="#eda515" /> : <AiOutlineStar size={'25px'} color="#eda515" />}
+
+                            <p>{product.review_star >= 1 ? " " : "No reviews"}</p>
+                          </div>
+                        </div>
 
 
-                      </Box>
+                      </div>
                     );
                   })}
                 </div>
               )}
             </div>
-          </Box>
-          <Box className="detail_page_footer">
+          </div>
+          <div className="detail_page_footer">
 
-          </Box>
-        </Box>
-      </Box>
-    </Box>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
