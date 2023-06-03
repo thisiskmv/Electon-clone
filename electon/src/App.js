@@ -4,6 +4,7 @@ import ProductDetail from './Component/ProductDetail';
 import Product from './Component/pages/Product';
 import Cart from './Component/pages/Cart';
 import Payment from './Component/pages/Payment';
+import Footer from './Component/Footer';
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
 
       {/* <ColorCheckbox/> */}
       {/* <Product/> */}
-      {/* <Cart /> */}
+      <Cart />
       <Payment />
-
+      <Footer />
     </div>
   );
 }
