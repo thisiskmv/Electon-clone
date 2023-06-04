@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box} from "@chakra-ui/react";
+import { Box, Button} from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import Skelton from "./Skelton";
 import { thunkActionCreator } from "../../Redux/thunk";
 import ProductItems from "./ProductItems";
 import Error from "./Error";
-import Theme from "../Theme/Theme";
+import "./theme.css"
+
 
 function Product(props) {
   const dispatch = useDispatch();
@@ -23,11 +24,19 @@ function Product(props) {
   };
 
   const { product, isLoading, isError } = useSelector((store) => {
-    return store;
+    return store.reducer;
   });
-  console.log(isLoading);
+  const { theme} = useSelector((store) => {
+    return store.themeReducer;
+  });
+  console.log(theme)
+  // console.log(isLoading); h="100"
   return (
-    <Box m="4rem 2.5rem" >
+    <Box minH="100vh" p="2.6rem"  className={theme==="light" ? "light_theme" : "dark_theme"}>
+    <Box>
+      
+      <Button onClick={()=>{dispatch({type:"themeChange",payload:"light"})}}>Light</Button>
+      <Button onClick={()=>{dispatch({type:"themeChange",payload:"dark"})}}>dark</Button>
  
       {isLoading ? (
         <Skelton />
@@ -42,6 +51,7 @@ function Product(props) {
           setToggle={setToggle}
         />
       )}
+    </Box>
     </Box>
   );
 }
