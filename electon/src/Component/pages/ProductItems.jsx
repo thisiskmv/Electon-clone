@@ -16,14 +16,18 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { thunkActionCreator } from "../../Redux/thunk";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { errorActionCreator, productActionCreator } from "../../Redux/actionCreator";
 function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
   
   const dispatch=useDispatch()
-  // useEffect(()=>{
-  //   dispatch(thunkActionCreator("productData"));
-  // },[])
+  const { theme} = useSelector((store) => {
+    return store.themeReducer;
+  });
+  console.log(theme)
+
+  // const img=product[0].image[0]
+  // console.log(img)
   return (
     <Flex>
       <Box m="0.5rem" w="25%" h="100vh">
@@ -295,7 +299,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
         </Box>
       </Box>
 
-      <Box m="0.5rem" w="75%" h="90vh">
+      <Box m="0.5rem" w="75%" >
         <div>
           {product.length > 0 && (
             <div
@@ -305,7 +309,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                 textAlign: "left",
               }}
             >
-              {product.map((elm) => {
+              {product?.map((elm) => {
                 return (
                   <Box
                     key={elm.id}
@@ -315,8 +319,10 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                     m="0.5rem"
                   >
                     <Flex justify={"center"}>
+                      {elm.image>0 && console.log(elm.image[0])}
                       <Image
                         src={elm.image[0]}
+
                         width="200px"
                         height={"180px"}
                         alt=""
@@ -324,7 +330,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                     </Flex>
                     <Spacer />
                     <Box mt="1rem" lineHeight={"2.2rem"}>
-                      <h3>{elm.name.slice(0, 26)}</h3>
+                      {/* <h3>{elm.name.slice(0, 26)}</h3> */}
                       <h3>₹{elm.price}</h3>
                       <Flex mt="0.6rem">
                         <AiTwotoneStar color="grey" />
