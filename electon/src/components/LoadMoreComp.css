@@ -1,0 +1,69 @@
+.myCard{
+    min-width: 300px;
+    max-width: 300px;
+    box-shadow: 0 0 0 #888;
+    height: 400px;
+    background-color: #ffffff;
+    margin: 10px;
+    color: white;
+    border: 1px solid lightgrey;
+    padding:10px;
+    border-radius: 10px;
+}
+.myCard button{
+    border-radius: 12px;
+    background-color: #eda515;
+    color:white;
+    padding:10px;
+    width:100px;
+    font-size: 10px;
+}
+.myCard h2{
+   color:#003f62
+}
+.myCard button:hover{
+    background-color: #eda515;
+}
+
+.myCard img{
+    width:100%;
+    height:70%;
+    margin-bottom: 4px;
+}
+.product-card{
+    display:flex;
+    gap:30px;
+    padding:0 10px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.product-carousel{
+    position: relative;
+    overflow: hidden;
+    padding:26px;
+}
+.pre-btn,
+.next-btn{
+    width:60px;
+    height:100%;
+    border: none;
+    position: absolute;
+    top:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0);
+}
+.next-btn{
+    right:0;
+}
+.next-btn p,
+.pre-btn p{
+    font-size: 30px;
+    background-color: rgba(0,0,0,0.436);
+    color: white;
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    border-radius: 50px;
+}
