@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios';
 import "./LoadMoreComp.css"
 import { Button } from '@mui/material';
+import {AiOutlineArrowRight,AiOutlineArrowLeft } from 'react-icons/ai';
 const LoadMoreComp = () => {
     const[productData,setProductData]=useState([])
     useEffect(()=>{
@@ -22,8 +23,8 @@ const LoadMoreComp = () => {
     }
   return (
     <div className='product-carousel'>
-         <button className='pre-btn' onClick={handlePrevBtn}><p>&lt;</p></button>
-         <button className='next-btn' onClick={handleNextBtn}><p>&gt;</p></button>
+         <button className='pre-btn' onClick={handlePrevBtn}><p><AiOutlineArrowLeft/></p></button>
+         <button className='next-btn' onClick={handleNextBtn}><p><AiOutlineArrowRight/></p></button>
 
          <div className='product-card'>
              {

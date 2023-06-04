@@ -1,19 +1,46 @@
-import React, { useState } from 'react'
-
+import React, { useState, useEffect } from 'react';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useAuth0,user, isAuthenticated ,logout } from "@auth0/auth0-react";
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import { Button, Link } from '@mui/material';
-import Tippy from "@tippyjs/react"
-import 'tippy.js/dist/tippy.css';
-import './Header.css'
+import { useAuth0, user, isAuthenticated, logout } from '@auth0/auth0-react';
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
+import 'tippy.js/dist/tippy.css';
+import './Header.css';
 
 const Header = () => {
-    
-    const { loginWithRedirect,user, isAuthenticated,logout  } = useAuth0();
-   console.log(user)
+    const [cartItemCount, setCartItemCount] = useState(0);
+  const { loginWithRedirect, user, isAuthenticated, logout } = useAuth0();
+  const [wishlistItemCount, setWishlistItemCount] = useState(0);
+
+  useEffect(() => {
+    const fetchWishlistItemCount = async () => {
+      try {
+        const response = await fetch('https://electon-server.onrender.com/wishlistArr');
+        const data = await response.json();
+        setWishlistItemCount(data.length);
+      } catch (error) {
+        console.error('Error fetching wishlist item count:', error);
+      }
+    };
+
+    fetchWishlistItemCount();
+  }, []);
+
+  useEffect(() => {
+    const fetchCartItemCount = async () => {
+      try {
+        const response = await fetch('https://electon-server.onrender.com/cartArr');
+        const data = await response.json();
+        setCartItemCount(data.length);
+      } catch (error) {
+        console.error('Error fetching cart item count:', error);
+      }
+    };
+
+    fetchCartItemCount();
+  }, []);
+
   return (
     <div>
       <div className="header">
@@ -37,7 +64,7 @@ const Header = () => {
     
         </div>
         <div className="header__fourth">
-            <FavoriteBorderIcon/>&nbsp;<span style={{backgroundColor:"#eda515"}}>0</span>
+            <FavoriteBorderIcon/>&nbsp;<span style={{backgroundColor:"#eda515",borderRadius:"50px"}}>{wishlistItemCount}</span>
         </div>
         <div className="header__fifth">
         {
@@ -50,7 +77,7 @@ const Header = () => {
         
         </div>
         <div className="header__sixth">
-            <ShoppingCartOutlinedIcon/>&nbsp;<span style={{backgroundColor:"#eda515"}}>0</span>&nbsp;&nbsp;
+            <ShoppingCartOutlinedIcon/>&nbsp;<span style={{backgroundColor:"#eda515",borderRadius:"50px"}}>{cartItemCount}</span>&nbsp;&nbsp;
             <Link href="#" color="inherit" underline="none">Cart</Link>
         </div>
         </div>

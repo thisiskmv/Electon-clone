@@ -3,7 +3,7 @@
     max-width: 300px;
     box-shadow: 0 0 0 #888;
     height: 400px;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     margin: 10px;
     color: white;
     border: 1px solid lightgrey;
@@ -65,4 +65,5 @@
     width:30px;
     height:30px;
     cursor: pointer;
+    border-radius: 50px;
 }
