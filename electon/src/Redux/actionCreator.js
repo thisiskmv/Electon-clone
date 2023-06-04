@@ -20,3 +20,16 @@ export const removeItem = (payload) => {
         payload : payload
     }
 }
+
+export const loadingActionCreator=()=>{
+    return{
+        type:types.LOADING
+    }
+}
+
+export const errorActionCreator=()=>{
+    return{
+        type:types.ERROR
+    }
+}
+
