@@ -1,6 +1,7 @@
 .detail_page_main_container {
     width: 99%;
     margin: 0px;
+    margin-top: 50px;
   }
   
   .detail_page_first_container {
@@ -23,6 +24,7 @@
   .detail_page_image_container > .big_img {
     width: 95%;
     height: 70%;
+    margin: 0px;;
  
   }
   

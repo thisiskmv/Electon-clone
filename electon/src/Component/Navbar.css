@@ -1,0 +1,49 @@
+.headerList{
+    margin-top: -0px;
+   display:flex;
+   gap:20px;
+   background-color: #f4f4f4;
+   align-items: center;
+  
+}
+.headerList1{
+    display: flex;
+    background-color: #eda515;
+    margin-left: 30px;
+    gap:15px;
+    padding:13px;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+.headerList2{
+    display: flex;
+    margin-left: 50px;
+    align-items: center;
+    color:grey;
+    font-size: 14px;
+}
+.headerList3{
+    display: flex;
+    align-items: center;
+    color:grey;
+    font-size: 14px;
+}
+.headerList4{
+    display: flex;
+    align-items: center;
+    color:grey;
+    font-size: 14px;
+}
+.headerList5{
+    display: flex;
+    align-items: center;
+    color:grey;
+    font-size: 14px;
+}
+.headerList6{
+    display: flex;
+    align-items: center;
+    color:grey;
+    font-size: 14px;
+}

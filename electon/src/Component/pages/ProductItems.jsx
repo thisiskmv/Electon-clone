@@ -18,12 +18,15 @@ import {
 import { thunkActionCreator } from "../../Redux/thunk";
 import { useDispatch } from "react-redux";
 import { errorActionCreator, productActionCreator } from "../../Redux/actionCreator";
+import { useNavigate } from "react-router-dom";
 function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
   
   const dispatch=useDispatch()
   // useEffect(()=>{
   //   dispatch(thunkActionCreator("productData"));
   // },[])
+
+  const navigate = useNavigate()
   return (
     <Flex>
       <Box m="0.5rem" w="25%" h="100vh">
@@ -313,6 +316,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                     borderRadius={"1.5rem"}
                     p="1rem"
                     m="0.5rem"
+                    onClick={()=>navigate(`/product/${elm.id}`)}
                   >
                     <Flex justify={"center"}>
                       <Image

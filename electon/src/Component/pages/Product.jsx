@@ -5,7 +5,8 @@ import Skelton from "./Skelton";
 import { thunkActionCreator } from "../../Redux/thunk";
 import ProductItems from "./ProductItems";
 import Error from "./Error";
-import Theme from "../Theme/Theme";
+import { Link } from 'react-router-dom';
+// import Theme from "../Theme/Theme";
 
 function Product(props) {
   const dispatch = useDispatch();
@@ -25,6 +26,7 @@ function Product(props) {
   const { product, isLoading, isError } = useSelector((store) => {
     return store;
   });
+  console.log(product)
   console.log(isLoading);
   return (
     <Box m="4rem 2.5rem" >
@@ -34,13 +36,16 @@ function Product(props) {
       ) : isError ? (
         <Error />
       ) : (
+      
         <ProductItems
           product={product}
           filterData={filterData}
           limitData={limitData}
           toggle={toggle}
           setToggle={setToggle}
+          id={product.id }
         />
+        
       )}
     </Box>
   );

@@ -11,7 +11,8 @@ import { RiWhatsappFill } from 'react-icons/ri';
 import axios from 'axios';
 import { initialStates, productReducer } from '../Redux/reducer';
 import '../Style/ProductDetail.css';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 export default function ProductDetail({ product }) {
   const [selectedSize, setSelectedSize] = useState([]);
@@ -84,7 +85,7 @@ export default function ProductDetail({ product }) {
 
   const [state, dispatch] = useReducer(productReducer, initialStates);
 
-
+  const navigate = useNavigate()
 
   const handleAddToCart = () => {
     const payload = {
@@ -101,14 +102,43 @@ export default function ProductDetail({ product }) {
         console.log(response.data);
 
         alert('Item added to cart successfully!');
+
       })
       .catch((error) => {
         console.error(error);
 
         alert('Item already added to cart!');
       });
+
+   
   };
 
+  const handleAddToBuy = () => {
+    const payload = {
+      color: state.selectedColor,
+      size: state.selectedSize,
+      quantity: state.selectedQuantity,
+      price: product.price * state.selectedQuantity,
+      ...product,
+    }
+
+    // axios
+    //   .post('https://electon-server.onrender.com/cartArr', payload)
+    //   .then((response) => {
+    //     console.log(response.data);
+
+        
+
+    //   })
+    //   .catch((error) => {
+    //     console.error(error);
+
+    //   });
+
+
+
+    navigate('/cart')
+  };
 
   const [wishproducts, setWishproducts] = useState([]);
 
@@ -292,7 +322,7 @@ export default function ProductDetail({ product }) {
             </div>
             <div className="button_div">
               <button onClick={handleAddToCart}>Add to cart</button>
-              <button onClick={handleAddToCart}>Buy it now</button>
+              <button onClick={handleAddToBuy}>Buy it now</button>
               {isInWishlist ? (
                 <button className='wishlist_btn_del' onClick={handleRemoveWishlist}>
                   <AiFillHeart size={'30px'} color="#eda515" />
@@ -396,11 +426,11 @@ export default function ProductDetail({ product }) {
             <div >
 
               {wishproducts.length > 0 && (
-                <div  className='wishlist_main_container' >
+                <div className='wishlist_main_container' >
                   {wishproducts.map((elm) => {
                     return (
                       <div
-                       
+
                       >
 
                         <div >
