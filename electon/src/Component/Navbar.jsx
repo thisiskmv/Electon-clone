@@ -7,11 +7,12 @@ const Navbar = () => {
     <div>
          <ul className='headerList'>
             <div className='headerList1'>
-            <Link href="#" color="white" underline="none">Browse categories</Link>
+            <Link href="/productPage" color="white" underline="none">Browse categories
             <ExpandMoreIcon/>
+            </Link>
             </div>
             <div className='headerList2'>
-            <Link href="#" color="black" underline="none">Home</Link>
+            <Link href="/" color="black" underline="none">Home</Link>
             <ExpandMoreIcon/>
             </div>
             <div className='headerList3'>

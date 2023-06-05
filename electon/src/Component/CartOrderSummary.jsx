@@ -11,6 +11,7 @@ import {
 import { FaArrowRight } from 'react-icons/fa'
 import { formatPrice } from './PriceTag'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const OrderSummaryItem = (props) => {
     const { label, value, children } = props
@@ -30,6 +31,8 @@ const CartOrderSummary = (props) => {
         return store.total
     })
 
+    const navigate = useNavigate()
+
     return (
         <Stack spacing="8" borderWidth="1px" rounded="lg" padding="8" width="full">
             <Heading size="md">Order Summary</Heading>
@@ -37,7 +40,7 @@ const CartOrderSummary = (props) => {
             <Stack spacing="6">
                 <OrderSummaryItem label="Subtotal" value={formatPrice(total)} />
                 <OrderSummaryItem label="Shipping + Tax">
-                    $25
+                    $40
                 </OrderSummaryItem>
                 <OrderSummaryItem label="Coupon Code">
                     <Link href="#" textDecor="underline">
@@ -49,12 +52,12 @@ const CartOrderSummary = (props) => {
                         Total
                     </Text>
                     <Text fontSize="xl" fontWeight="extrabold">
-                        {formatPrice(total + 25)}
+                        {formatPrice(total + 40)}
                     </Text>
                 </Flex>
             </Stack>
             
-            <Button color='white' bg="#F6AD55" size="lg" fontSize="md" rightIcon={<FaArrowRight />} >
+            <Button onClick={()=>navigate('/checkout')} color='white' bg="#F6AD55" size="lg" fontSize="md" rightIcon={<FaArrowRight />} >
                 Checkout
             </Button>
         </Stack>

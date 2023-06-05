@@ -8,7 +8,9 @@ import {
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
+// import { ChakraProvider } from '@chakra-ui/react';
 
+import  './Footer.css';
 const Logo = props => {
   return (
     <img
@@ -32,58 +34,47 @@ const ListHeader = ({ children }) => {
 
 const Footer = () => {
   return (
-    <div>
-      <Box
-        bg={useColorModeValue('blue.50')}
-        color={useColorModeValue('blue.700')}>
-        <Container as={Stack} maxW={'90%'} py={10}>
-          <SimpleGrid
-            templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr' }}
-            spacing={250}>
-            <Stack spacing={6}>
-              <Box>
-                <Logo color={useColorModeValue('gray.700', 'white')} />
-              </Box>
-              <Text fontSize={'sm'}>
-                64 st james boulevard <br /> hoswick, ze2 7zj
-              </Text>
-            </Stack>
-            <Stack align={'flex-start'} fontSize={"md"} >
-              <ListHeader>Find Product</ListHeader>
-              <Link href={'#'}>Brownze arnold</Link>
-              <Link href={'#'}>Chronograph blue</Link>
-              <Link href={'#'}>Smart phones</Link>
-              <Link href={'#'}>Automatic watch</Link>
-              <Link href={'#'}>Hair straighteners</Link>
-            </Stack>
-            <Stack align={'flex-start'} fontSize={"md"}>
-              <ListHeader>Get help</ListHeader>
-              <Link href={'#'}>About us</Link>
-              <Link href={'#'}>Contact us</Link>
-              <Link href={'#'}>Return policy</Link>
-              <Link href={'#'}>Privacy policy</Link>
-              <Link href={'#'}>Payment policy</Link>
-            </Stack>
-            <Stack align={'flex-start'} fontSize={"md"}>
-              <ListHeader>About us</ListHeader>
-              <Link href={'#'}>News</Link>
-              <Link href={'#'}>Service</Link>
-              <Link href={'#'}>Our policy</Link>
-              <Link href={'#'}>Custmer care</Link>
-              <Link href={'#'}>Faq's</Link>
-            </Stack>
-            {/* <Stack align={'flex-start'}>
-              <ListHeader>Follow Us</ListHeader>
-              <Link href={'#'}>Facebook</Link>
-              <Link href={'#'}>Twitter</Link>
-              <Link href={'#'}>Dribbble</Link>
-              <Link href={'#'}>Instagram</Link>
-              <Link href={'#'}>LinkedIn</Link>
-            </Stack> */}
-          </SimpleGrid>
-        </Container>
-      </Box>
+    <div class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-stack">
+        <img
+          class="footer-logo"
+          src="https://res.cloudinary.com/admitad-gmbh/image/upload/v1645289711/fwgb4vfb9en87kht1zzb.jpg"
+          alt="Logo"
+        />
+        <p class="footer-address">
+          64 st james boulevard <br />
+          hoswick, ze2 7zj
+        </p>
+      </div>
+      <div class="footer-stack">
+        <h2 class="footer-header">Find Product</h2>
+        <a href="#">Brownze arnold</a>
+        <a href="#">Chronograph blue</a>
+        <a href="#">Smart phones</a>
+        <a href="#">Automatic watch</a>
+        <a href="#">Hair straighteners</a>
+      </div>
+      <div class="footer-stack">
+        <h2 class="footer-header">Get help</h2>
+        <a href="#">About us</a>
+        <a href="#">Contact us</a>
+        <a href="#">Return policy</a>
+        <a href="#">Privacy policy</a>
+        <a href="#">Payment policy</a>
+      </div>
+      <div class="footer-stack">
+        <h2 class="footer-header">About us</h2>
+        <a href="#">News</a>
+        <a href="#">Service</a>
+        <a href="#">Our policy</a>
+        <a href="#">Customer care</a>
+        <a href="#">Faq's</a>
+      </div>
     </div>
+  </div>
+</div>
   )
 }
 

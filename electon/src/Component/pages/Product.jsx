@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Box, Button} from "@chakra-ui/react";
+import { Box} from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import Skelton from "./Skelton";
 import { thunkActionCreator } from "../../Redux/thunk";
 import ProductItems from "./ProductItems";
 import Error from "./Error";
-import "./theme.css"
-
+import { Link } from 'react-router-dom';
+// import Theme from "../Theme/Theme";
+import Footer from "../Footer"
 
 function Product(props) {
   const dispatch = useDispatch();
@@ -24,35 +25,35 @@ function Product(props) {
   };
 
   const { product, isLoading, isError } = useSelector((store) => {
-    return store.reducer;
+    return store;
   });
-  const { theme} = useSelector((store) => {
-    return store.themeReducer;
-  });
-  console.log(theme)
-  // console.log(isLoading); h="100"
+  console.log(product)
+  console.log(isLoading);
   return (
-    <Box minH="100vh" p="2.6rem"  className={theme==="light" ? "light_theme" : "dark_theme"}>
-    <Box>
-      
-      <Button onClick={()=>{dispatch({type:"themeChange",payload:"light"})}}>Light</Button>
-      <Button onClick={()=>{dispatch({type:"themeChange",payload:"dark"})}}>dark</Button>
+    <>
+    <Box m="4rem 2.5rem" >
  
       {isLoading ? (
         <Skelton />
       ) : isError ? (
         <Error />
       ) : (
+      
         <ProductItems
           product={product}
           filterData={filterData}
           limitData={limitData}
           toggle={toggle}
           setToggle={setToggle}
+          id={product.id }
         />
+        
+        
       )}
+
     </Box>
-    </Box>
+   
+    </>
   );
 }
 

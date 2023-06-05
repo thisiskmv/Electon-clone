@@ -5,6 +5,7 @@ import "./ReviewComp.css";
 import { Button } from "@chakra-ui/react";
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsFillCircleFill, BsCircle } from 'react-icons/bs';
+import Footer from './Footer';
 
 export default function ReviewComp() {
     const [catArr, setCatArr] = useState([]);
@@ -53,7 +54,7 @@ export default function ReviewComp() {
 
 
             <div />
-
+<Footer/>
         </>
     )
 }

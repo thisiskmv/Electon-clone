@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsFillCircleFill, BsCircle } from 'react-icons/bs';
 import ReviewComp from "./ReviewComp"
+import Footer from './Footer';
 // import black_img from "./blck_img.png"
 const PopularProducts = () => {
   const [catArr, setCatArr] = useState([]);
@@ -46,10 +47,12 @@ const PopularProducts = () => {
         <div>
           <div className="grid-container">
             {currentProducts.map((elm) => (
-              // <Link to={`/product/${elm.id}`}>
+             
               <div className="box-item" key={elm.id}>
                 <div className="image-container">
+                <Link to={`/product/${elm.id}`} underline="none">
                   <img className="image" src={elm.image[0]} alt="" />
+                  </Link>
                 </div>
                 <div className="box-item-content">
                   <h3>{elm.name.slice(0, 26)}</h3>
@@ -68,7 +71,7 @@ const PopularProducts = () => {
                   </div>
                 </div>
               </div>
-              // </Link>
+               
             ))}
           </div>
         </div>
@@ -106,6 +109,7 @@ const PopularProducts = () => {
           <ReviewComp />
         </div>
       </div>
+    
     </div>
   );
 };

@@ -4,6 +4,7 @@ import PriceTag from './PriceTag'
 import CartProductMeta from './CartProductMeta'
 import { useDispatch } from 'react-redux'
 import { removeItem } from '../Redux/actionCreator'
+import Footer from './Footer';
 
 const QuantitySelect = (props) => {
 
@@ -43,7 +44,7 @@ const CartItem = ({ item, updateCart, removeItem }) => {
     size,
     description,
     quantity,
-    imageUrl,
+    image,
     currency,
     price,
     onChangeQuantity,
@@ -63,7 +64,7 @@ const CartItem = ({ item, updateCart, removeItem }) => {
         name={name}
         description={description}
         color={color}
-        image={imageUrl}
+        image={image[0]}
         size={size}
       // isGiftWrapping={isGiftWrapping}
       />
@@ -77,7 +78,7 @@ const CartItem = ({ item, updateCart, removeItem }) => {
           md: 'flex',
         }}
       >
-        <PriceTag price={price} currency={currency} />
+        <PriceTag price={parseInt(price)} currency={currency} />
         <QuantitySelect
           value={quantity}
           onChange={(e) => {
@@ -107,9 +108,11 @@ const CartItem = ({ item, updateCart, removeItem }) => {
             onChangeQuantity?.(+e.currentTarget.value)
           }}
         />
-        <PriceTag price={price} currency={currency} />
+        <PriceTag price={parseInt(price)} currency={currency} />
       </Flex>
+    
     </Flex>
+    
   )
 }
 

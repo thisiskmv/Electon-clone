@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+
 import { Button, Link } from '@mui/material';
 import { useAuth0, user, isAuthenticated, logout } from '@auth0/auth0-react';
-import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+
 
 import 'tippy.js/dist/tippy.css';
 import './Header.css';
+import  PersonOutlineIcon  from '@mui/icons-material/PersonOutline';
+import  ShoppingCartOutlinedIcon  from '@mui/icons-material/ShoppingCartOutlined';
+import  FavoriteBorderIcon  from '@mui/icons-material/FavoriteBorder';
 
 const Header = () => {
     const [cartItemCount, setCartItemCount] = useState(0);
@@ -47,7 +50,9 @@ const Header = () => {
         <div className='left'>
         <div className="header__first">
             <img src="" alt=""/>
+            <Link href='/'color="white" underline="none">
             <h1>Electon</h1>
+            </Link>
         </div>
         <div className="header__second">
             <input type="text" placeholder='Search any things'/>
@@ -78,7 +83,7 @@ const Header = () => {
         </div>
         <div className="header__sixth">
             <ShoppingCartOutlinedIcon/>&nbsp;<span style={{backgroundColor:"#eda515",borderRadius:"50px"}}>{cartItemCount}</span>&nbsp;&nbsp;
-            <Link href="#" color="inherit" underline="none">Cart</Link>
+            <Link href="/cart" color="inherit" underline="none">Cart</Link>
         </div>
         </div>
       </div>

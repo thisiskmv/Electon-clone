@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import axios from 'axios'
 import {
   Box,
   Flex,
@@ -13,8 +14,36 @@ import CartOrderSummary from '../CartOrderSummary'
 import { useDispatch, useSelector } from 'react-redux'
 import { UPDATE_CART } from '../../Redux/actionTypes'
 import { FaCommentsDollar } from 'react-icons/fa'
-
+import Footer from '../Footer'
 const Cart = () => {
+
+
+  useEffect(() => {
+    axios.get('https://electon-server.onrender.com/cartArr').then((res) => {
+      console.log(res.data);
+      const newdata = res.data.map((item) => {
+        return { ...item, quantity: 1 }
+      })
+      console.log(newdata)
+      const total = newdata.reduce((acc, elem) => {
+        return acc + parseInt(elem.price) * elem.quantity
+      }, 0)
+      console.log(total);
+
+      dispatch({
+        type: UPDATE_CART,
+        payload: {
+          cart: newdata,
+
+          total: total
+
+        }
+      })
+
+    })
+
+  }, [])
+
   const cartData = useSelector((store) => {
     return store.cart
   });
@@ -31,7 +60,7 @@ const Cart = () => {
     // setCartData(newcart)
 
     const total = newcart.reduce((acc, elem) => {
-      return acc + elem.price * elem.quantity
+      return acc + parseInt(elem.price) * elem.quantity
     }, 0)
     console.log(total);
 
@@ -39,7 +68,7 @@ const Cart = () => {
       type: UPDATE_CART,
       payload: {
         cart: newcart,
-        total: total
+        total: total 
       }
     })
 
@@ -51,7 +80,7 @@ const Cart = () => {
     })
 
     const total = newcart.reduce((acc, elem) => {
-      return acc + elem.price * elem.quantity
+      return acc + parseInt(elem.price) * elem.quantity
     }, 0)
     console.log(total);
 
@@ -66,6 +95,7 @@ const Cart = () => {
   }
 
   return (
+    <>
     <Box
       maxW={{
         base: '3xl',
@@ -122,7 +152,10 @@ const Cart = () => {
           </HStack>
         </Flex>
       </Stack>
+      
     </Box>
+    <Footer/>
+    </>
   )
 }
 

@@ -19,7 +19,8 @@
     font-size: 10px;
 }
 .myCard h2{
-   color:#003f62
+   color:#003f62;
+   text-align: center;
 }
 .myCard button:hover{
     background-color: #eda515;

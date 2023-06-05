@@ -68,6 +68,7 @@
  }
  .header__fourth>span{
     width:20px;
+    text-align: center;
  }
  .header__fifth{
     display:flex;
@@ -80,5 +81,6 @@
  }
  .header__sixth>span{
     width:20px;
+    text-align: center;
  }
  

@@ -16,19 +16,20 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { thunkActionCreator } from "../../Redux/thunk";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { errorActionCreator, productActionCreator } from "../../Redux/actionCreator";
+import Footer from "../Footer";
+import { useNavigate } from "react-router-dom";
 function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
   
   const dispatch=useDispatch()
-  const { theme} = useSelector((store) => {
-    return store.themeReducer;
-  });
-  console.log(theme)
+  // useEffect(()=>{
+  //   dispatch(thunkActionCreator("productData"));
+  // },[])
 
-  // const img=product[0].image[0]
-  // console.log(img)
+  const navigate = useNavigate()
   return (
+    <>
     <Flex>
       <Box m="0.5rem" w="25%" h="100vh">
         <Box
@@ -299,7 +300,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
         </Box>
       </Box>
 
-      <Box m="0.5rem" w="75%" >
+      <Box m="0.5rem" w="75%" h="90vh">
         <div>
           {product.length > 0 && (
             <div
@@ -309,7 +310,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                 textAlign: "left",
               }}
             >
-              {product?.map((elm) => {
+              {product.map((elm) => {
                 return (
                   <Box
                     key={elm.id}
@@ -317,12 +318,11 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                     borderRadius={"1.5rem"}
                     p="1rem"
                     m="0.5rem"
+                    onClick={()=>navigate(`/product/${elm.id}`)}
                   >
                     <Flex justify={"center"}>
-                      {elm.image>0 && console.log(elm.image[0])}
                       <Image
                         src={elm.image[0]}
-
                         width="200px"
                         height={"180px"}
                         alt=""
@@ -330,7 +330,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                     </Flex>
                     <Spacer />
                     <Box mt="1rem" lineHeight={"2.2rem"}>
-                      {/* <h3>{elm.name.slice(0, 26)}</h3> */}
+                      <h3>{elm.name.slice(0, 26)}</h3>
                       <h3>₹{elm.price}</h3>
                       <Flex mt="0.6rem">
                         <AiTwotoneStar color="grey" />
@@ -367,6 +367,8 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
         </Center>
       </Box>
     </Flex>
+    {/* <Footer/> */}
+</>
   );
 }
 

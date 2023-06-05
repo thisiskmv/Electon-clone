@@ -1,4 +1,4 @@
-import { FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE } from './actionTypes';
+import { FETCH_PRODUCT_SUCCESS, FETCH_PRODUCT_FAILURE } from './detailactionTypes';
 
 const initialState = {
   product: null,

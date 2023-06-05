@@ -24,6 +24,8 @@ import {
 import { useToast } from '@chakra-ui/react'
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { useSelector } from 'react-redux';
+import Footer from '../Footer';
 //   import { handleUserPayment } from "../redux/Auth/action";
 
 
@@ -36,6 +38,10 @@ const Payment = () => {
   const [street, setStreet] = useState("");
   const [pincode, setPincode] = useState("");
   const [country, setCountry] = useState("India");
+  const [total, setTotal] = useState(useSelector((store) => {
+    return store.total
+  }));
+
   const dispatch = useDispatch();
   const toast = useToast()
   const handlePayment = () => {
@@ -66,15 +72,20 @@ const Payment = () => {
   const [cartItems, setCartItems] = useState([]);
 
 
-  useEffect(() => {
-    const items = JSON.parse(localStorage.getItem("cartItems")) || [];
-    setCartItems(items);
-  }, []);
+  // useEffect(() => {
+  //   // const items = JSON.parse(localStorage.getItem("cartItems")) || [];
+  //   // setCartItems(items);
 
-  const total = cartItems.reduce((acc, item) => acc + item.DiscountPrice, 0)
-  const totalmain = cartItems.reduce((acc, item) => acc + item.Price, 0)
+  //   const total = useSelector((store) => {
+  //     return store.total
+  //   })
+  //   setTotal(total);
+  // }, []);
 
-  const Tsave = totalmain - total
+  // const total = cartItems.reduce((acc, item) => acc + item.DiscountPrice, 0)
+  // const totalmain = cartItems.reduce((acc, item) => acc + item.Price, 0)
+
+  const Tsave = 200
 
 
   return (
@@ -295,7 +306,7 @@ const Payment = () => {
                 <Tr>
                   <Th>SUB TOTAL</Th>
 
-                  <Th isNumeric> ₹ {totalmain}</Th>
+                  <Th isNumeric> ₹ {total + 200}</Th>
                 </Tr>
               </Thead>
               <Tbody>
@@ -314,14 +325,14 @@ const Payment = () => {
                 <Tr>
                   <Th>TOTAL COAST</Th>
 
-                  <Th isNumeric> ₹{total} </Th>
+                  <Th isNumeric> ${total+40} </Th>
                 </Tr>
               </Tfoot>
             </Table>
           </TableContainer>
         </Grid>
       </Flex>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };
