@@ -18,6 +18,7 @@ import {
 import { thunkActionCreator } from "../../Redux/thunk";
 import { useDispatch } from "react-redux";
 import { errorActionCreator, productActionCreator } from "../../Redux/actionCreator";
+import Footer from "../Footer";
 import { useNavigate } from "react-router-dom";
 function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
   
@@ -28,6 +29,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
 
   const navigate = useNavigate()
   return (
+    <>
     <Flex>
       <Box m="0.5rem" w="25%" h="100vh">
         <Box
@@ -365,6 +367,8 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
         </Center>
       </Box>
     </Flex>
+    {/* <Footer/> */}
+</>
   );
 }
 

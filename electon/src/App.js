@@ -16,7 +16,7 @@ function App() {
     <AllRoutes />
 
 
-    <Footer/>
+    {/* <Footer/> */}
     
 
 

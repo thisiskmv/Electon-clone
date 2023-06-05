@@ -3,6 +3,7 @@ import Header from './Header'
 import Navbar from './Navbar'
 import LoadMoreComp from './LoadMoreComp'
 import PopularProducts from './PopularProducts'
+import Footer from './Footer'
 
 const Home = () => {
   return (
@@ -11,6 +12,8 @@ const Home = () => {
           <Navbar/> */}
           <LoadMoreComp/>
           <PopularProducts/>
+
+          
     </div>
   )
 }

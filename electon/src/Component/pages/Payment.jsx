@@ -25,6 +25,7 @@ import { useToast } from '@chakra-ui/react'
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
+import Footer from '../Footer';
 //   import { handleUserPayment } from "../redux/Auth/action";
 
 
@@ -331,7 +332,7 @@ const Payment = () => {
           </TableContainer>
         </Grid>
       </Flex>
-      {/* <Footer/> */}
+      <Footer/>
     </>
   );
 };

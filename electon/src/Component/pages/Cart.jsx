@@ -14,7 +14,7 @@ import CartOrderSummary from '../CartOrderSummary'
 import { useDispatch, useSelector } from 'react-redux'
 import { UPDATE_CART } from '../../Redux/actionTypes'
 import { FaCommentsDollar } from 'react-icons/fa'
-
+import Footer from '../Footer'
 const Cart = () => {
 
 
@@ -95,6 +95,7 @@ const Cart = () => {
   }
 
   return (
+    <>
     <Box
       maxW={{
         base: '3xl',
@@ -151,7 +152,10 @@ const Cart = () => {
           </HStack>
         </Flex>
       </Stack>
+      
     </Box>
+    <Footer/>
+    </>
   )
 }
 

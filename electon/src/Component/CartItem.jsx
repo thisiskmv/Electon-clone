@@ -4,6 +4,7 @@ import PriceTag from './PriceTag'
 import CartProductMeta from './CartProductMeta'
 import { useDispatch } from 'react-redux'
 import { removeItem } from '../Redux/actionCreator'
+import Footer from './Footer';
 
 const QuantitySelect = (props) => {
 
@@ -109,7 +110,9 @@ const CartItem = ({ item, updateCart, removeItem }) => {
         />
         <PriceTag price={parseInt(price)} currency={currency} />
       </Flex>
+    
     </Flex>
+    
   )
 }
 

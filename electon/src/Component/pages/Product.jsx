@@ -7,6 +7,7 @@ import ProductItems from "./ProductItems";
 import Error from "./Error";
 import { Link } from 'react-router-dom';
 // import Theme from "../Theme/Theme";
+import Footer from "../Footer"
 
 function Product(props) {
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ function Product(props) {
   console.log(product)
   console.log(isLoading);
   return (
+    <>
     <Box m="4rem 2.5rem" >
  
       {isLoading ? (
@@ -46,8 +48,12 @@ function Product(props) {
           id={product.id }
         />
         
+        
       )}
+
     </Box>
+   
+    </>
   );
 }
 

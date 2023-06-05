@@ -1,20 +1,27 @@
 .footer {
     background-color: #f0f7ff;
     color: #007bff;
+    /* text-align: center; */
+    
+   
   }
   
   .footer-container {
-    max-width: 90%;
-    padding-top: 10px;
+    width: 99%;
+    /* padding: 20px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+
   }
   
   .footer-grid {
+    padding: 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 250px;
-    width: 99%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+   gap: 10px;
+    width: 80%;
   }
   
   .footer-stack {

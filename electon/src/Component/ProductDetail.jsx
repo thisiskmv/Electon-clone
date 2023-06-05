@@ -13,7 +13,7 @@ import { initialStates, productReducer } from '../Redux/reducer';
 import '../Style/ProductDetail.css';
 import { Link, Navigate } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-
+import Footer from './Footer';
 export default function ProductDetail({ product }) {
   const [selectedSize, setSelectedSize] = useState([]);
   const [isInWishlist, setIsInWishlist] = useState(false); const [isDescriptionVisible, setDescriptionVisible] = useState(true);
@@ -122,18 +122,18 @@ export default function ProductDetail({ product }) {
       ...product,
     }
 
-    // axios
-    //   .post('https://electon-server.onrender.com/cartArr', payload)
-    //   .then((response) => {
-    //     console.log(response.data);
+    axios
+      .post('https://electon-server.onrender.com/cartArr', payload)
+      .then((response) => {
+        console.log(response.data);
 
-        
+      
 
-    //   })
-    //   .catch((error) => {
-    //     console.error(error);
+      })
+      .catch((error) => {
+        console.error(error);
 
-    //   });
+      });
 
 
 
@@ -466,7 +466,7 @@ export default function ProductDetail({ product }) {
             </div>
           </div>
           <div className="detail_page_footer">
-
+<Footer/>
           </div>
         </div>
       </div>

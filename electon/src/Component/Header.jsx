@@ -83,7 +83,7 @@ const Header = () => {
         </div>
         <div className="header__sixth">
             <ShoppingCartOutlinedIcon/>&nbsp;<span style={{backgroundColor:"#eda515",borderRadius:"50px"}}>{cartItemCount}</span>&nbsp;&nbsp;
-            <Link href="cart" color="inherit" underline="none">Cart</Link>
+            <Link href="/cart" color="inherit" underline="none">Cart</Link>
         </div>
         </div>
       </div>

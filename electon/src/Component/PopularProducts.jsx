@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 import { BsFillCircleFill, BsCircle } from 'react-icons/bs';
 import ReviewComp from "./ReviewComp"
+import Footer from './Footer';
 // import black_img from "./blck_img.png"
 const PopularProducts = () => {
   const [catArr, setCatArr] = useState([]);
@@ -108,6 +109,7 @@ const PopularProducts = () => {
           <ReviewComp />
         </div>
       </div>
+    
     </div>
   );
 };
