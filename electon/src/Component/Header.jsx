@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Button, Link } from '@mui/material';
 import { useAuth0, user, isAuthenticated, logout } from '@auth0/auth0-react';
-
+import Signin from './SignIn';
 
 import 'tippy.js/dist/tippy.css';
 import './Header.css';
@@ -77,6 +77,7 @@ const Header = () => {
             <Link href="#" color="inherit" underline="none" onClick={()=>logout (
                 { logoutParams: { returnTo: window.location.origin } }
             )}>Sign out</Link>
+            
             :<Link href="#" color="inherit" underline="none" onClick={()=>loginWithRedirect()}>Sign in</Link>
         }
         
