@@ -1,19 +1,7 @@
+import {legacy_createStore as  createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from './reducer';
 
-import { legacy_createStore as createStore, applyMiddleware } from "redux"
-import thunk from "redux-thunk"
-import { reducer } from "./productReducer"
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
-const store = createStore(reducer, applyMiddleware(thunk))
-
-store.subscribe(() => {
-    console.log(store.getState())
-})
-
-
-
-
-
-
-
-
-export default store
+export default store;
