@@ -38,11 +38,8 @@ const Footer = () => {
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-stack">
-        <img
-          class="footer-logo"
-          src="https://res.cloudinary.com/admitad-gmbh/image/upload/v1645289711/fwgb4vfb9en87kht1zzb.jpg"
-          alt="Logo"
-        />
+        <h1>Electon</h1>
+
         <p class="footer-address">
           64 st james boulevard <br />
           hoswick, ze2 7zj
