@@ -30,8 +30,12 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
   const navigate = useNavigate()
   return (
     <>
-    <Flex>
-      <Box m="0.5rem" w="25%" h="100vh">
+ <Flex direction={{ md: "row" }} w={"100%"}>
+ <Box
+          // m="0.5rem"
+          w={{ base: "25%", md: "25%" }}
+          h="100vh"
+        >
         <Box
           m="1rem"
           lineHeight={"2.2rem"}
@@ -300,16 +304,24 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
         </Box>
       </Box>
 
-      <Box m="0.5rem" w="75%" h="90vh">
-        <div>
+      <Flex
+          ml={{ base: "10", md: "0" }}
+          w={{ base: "70%", md: "75%" }}
+          h="90vh"
+
+          flexDirection={"column"}
+          
+          alignItems={"end"}
+          textAlign={"center"}
+        >
+        <Box>
           {product.length > 0 && (
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(3,1fr)",
-                textAlign: "left",
-              }}
-            >
+            <Flex
+            display="grid"
+            gridTemplateColumns={{ base: "repeat(1, 1fr)", md: "repeat(3, 1fr)" }}
+            textAlign="left"
+            gap="1rem"
+          >
               {product.map((elm) => {
                 return (
                   <Box
@@ -343,9 +355,9 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
                   </Box>
                 );
               })}
-            </div>
+            </Flex>
           )}
-        </div>
+        </Box>
 
         <Center>
           <Button
@@ -365,7 +377,7 @@ function ProductItems({ product, filterData, limitData,toggle,setToggle }) {
             Load More
           </Button>
         </Center>
-      </Box>
+      </Flex>
     </Flex>
     {/* <Footer/> */}
 </>

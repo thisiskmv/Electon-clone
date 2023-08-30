@@ -7,7 +7,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import Home from '../Component/Home';
 import Cart from '../Component/pages/Cart';
 import Payment from '../Component/pages/Payment';
-
+import Header from '../Component/Header';
 const AllRoutes = () => {
   return (
     <Router>

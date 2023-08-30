@@ -31,7 +31,7 @@ function Product(props) {
   console.log(isLoading);
   return (
     <>
-    <Box m="4rem 2.5rem" >
+    <Box  >
  
       {isLoading ? (
         <Skelton />

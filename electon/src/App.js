@@ -12,7 +12,9 @@ function App() {
 
       {/* <Cart/> */}
 <Header/>
+
 <Navbar/>
+
     <AllRoutes />
 
 

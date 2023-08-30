@@ -1,50 +1,90 @@
-.headerList{
+.headerList {
     margin-top: -0px;
-   display:flex;
-   
-   gap:20px;
-   background-color: #f4f4f4;
-   align-items: center;
-  
-}
-.headerList1{
     display: flex;
+    gap: 20px;
+    background-color: #f4f4f4;
+    align-items: center;
+    padding: 10px 20px; /* Adjusted padding for better spacing */
+}
+
+.headerList1 {
+    display: flex;
+  margin-bottom: 10px;
+    text-align: center;
     background-color: #eda515;
-    margin-left: 30px;
-    gap:15px;
-    padding:13px;
+    margin-left: 20px; /* Reduced margin for better spacing */
+    gap: 10px; /* Reduced gap for better spacing */
+    padding: 10px; /* Adjusted padding for better spacing */
     align-items: center;
     color: white;
     font-size: 14px;
+    border-radius: 10px; /* Added border-radius for better appearance */
+    padding-bottom: 10px;
+    padding-top: -20px;
 }
-.headerList2{
-    display: flex;
-    margin-left: 50px;
-    align-items: center;
-    color:grey;
-    font-size: 14px;
+
+.headerList2,
+    .headerList3,
+    .headerList4 {
+        display: flex;
+        align-items: center;
+        color: grey;
+        font-size: 12px; /* Reduced font size for better fit */
+    }
+
+/* Media Queries for Tablet */
+@media screen and (max-width: 768px) {
+    .headerList1 {
+        margin-left: 10px; /* Adjusted margin for better spacing */
+        padding: 8px; /* Adjusted padding for better spacing */
+        font-size: 12px; /* Reduced font size for better fit */
+        align-items: center;
+    }
+    
+    /* Displaying certain headerList elements on tablet */
+    .headerList2,
+    .headerList3,
+    .headerList4 {
+        display: flex;
+        align-items: center;
+        color: grey;
+        font-size: 12px; /* Reduced font size for better fit */
+    }
 }
-.headerList3{
-    display: flex;
-    align-items: center;
-    color:grey;
-    font-size: 14px;
-}
-.headerList4{
-    display: flex;
-    align-items: center;
-    color:grey;
-    font-size: 14px;
-}
-.headerList5{
-    display: flex;
-    align-items: center;
-    color:grey;
-    font-size: 14px;
-}
-.headerList6{
-    display: flex;
-    align-items: center;
-    color:grey;
-    font-size: 14px;
+
+/* Media Queries for Mobile */
+@media screen and (max-width: 480px) {
+    .headerList {
+        flex-direction: column;
+        padding: 15px 20px; /* Adjusted padding for better spacing */
+    }
+    
+    .headerList1 {
+        margin-left: 0; /* Reset margin for better alignment */
+        margin-top: 10px; /* Adjusted margin for better spacing */
+        padding: 10px; /* Adjusted padding for better spacing */
+        font-size: 14px;
+        align-items: center;
+    }
+    
+    /* Displaying all headerList elements on mobile */
+    .headerList2{
+        display: flex;
+        align-items: center;
+        color: grey;
+        font-size: 12px; /* Reduced font size for better fit */
+        margin-top: 5px; /* Adjusted margin for better spacing */
+       
+    }
+    .headerList3,
+    .headerList4,
+    .headerList5,
+    .headerList6 {
+        display: flex;
+        align-items: center;
+        color: grey;
+        font-size: 12px; /* Reduced font size for better fit */
+        margin-top: 5px; /* Adjusted margin for better spacing */
+        display: none;
+    }
 }
