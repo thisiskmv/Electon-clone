@@ -96,7 +96,8 @@ const Payment = () => {
           base: "column",
           sm: "column",
           md: "column",
-          lg: "row",
+          lg: "column",
+          xl:"row"
         }}
         alignItems="center"
         gap={"20px"}
@@ -108,9 +109,11 @@ const Payment = () => {
             base: "column",
             sm: "column",
             md: "column",
-            lg: "row",
+            lg: "column",
+            xl:"row"
           }}
-          width={"35%"}
+          alignItems={"center"}
+          width={{ base: "100%", sm: "100%", md: "50%", lg: "50%",xl:"35%" }}
         >
           <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
             <Stack align={"center"}>
@@ -237,7 +240,7 @@ const Payment = () => {
           </Select>
           <Stack spacing={4}>
             <HStack>
-              <Box>
+              <Box  width={{ base: "100%", sm: "100%", md: "50%", lg: "35%" }}>
                 <FormLabel>CARD DETAILS</FormLabel>
                 <FormControl id="fullname" isRequired>
                   {/* <FormLabel>First Name</FormLabel> */}
