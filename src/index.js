@@ -10,8 +10,8 @@ import store from './Redux/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-  domain="dev-iv2ifgk05xfqb1m6.us.auth0.com"
-  clientId="Zs20TmXAX5QV81D9REMmJPM04eQ2fhP5"
+  domain="dev-2tajug76q5lry8il.us.auth0.com"
+  clientId="gTUqXUaprMgUHS7aY8pmPLG4YXJa8vP2"
   authorizationParams={{
     redirect_uri: window.location.origin
   }}>
