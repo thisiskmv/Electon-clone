@@ -45,7 +45,9 @@ const LoadMoreComp = () => {
                   <Link to={`/product/${item.id}`} underline="none">
                     <Button>View Details</Button>
                   </Link>
+                  <Link to={`/product/${item.id}`} underline="none">
                   <Button>Buy Now</Button>
+                  </Link>
                 </div>
               </div>
             )
