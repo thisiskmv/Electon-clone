@@ -12,17 +12,16 @@
   margin-bottom: 10px;
     text-align: center;
     background-color: #eda515;
-    margin-left: 20px; /* Reduced margin for better spacing */
-    gap: 10px; /* Reduced gap for better spacing */
-    padding: 10px; /* Adjusted padding for better spacing */
+    margin-left: 20px; 
+    gap: 10px; 
+    padding: 10px; 
     align-items: center;
     color: white;
     font-size: 14px;
-    border-radius: 10px; /* Added border-radius for better appearance */
-    padding-bottom: 10px;
-    padding-top: -20px;
+     border-radius: 10px; 
+   /* padding-bottom: 10px;
+    padding-top: -20px; */
 }
-
 .headerList2,
     .headerList3,
     .headerList4 {
