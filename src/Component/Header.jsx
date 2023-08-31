@@ -64,7 +64,7 @@ const Header = () => {
         <div className="header__third">
             <PersonOutlineIcon/>
             
-            <Link href="#" color="inherit" underline="none">{isAuthenticated ? user.email : "Welcome to Electon"}</Link>
+            <Link href="#" color="inherit" underline="none">{isAuthenticated ? user.name : "Welcome to Electon"}</Link>
             
     
         </div>
