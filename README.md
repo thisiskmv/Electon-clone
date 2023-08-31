@@ -4,7 +4,7 @@
 🚀 We are thrilled to announce the successful completion of our latest project - the launch of our exciting e-commerce website, Electon!
 
 ## Team Members
-
+- Abhishek Dukare
 - Kabir Sagar
 - Shashank Sharma
 - Kamal Verma
